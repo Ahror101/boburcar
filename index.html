@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoMarket</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>AutoMarket</h1>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="#" class="nav-link" data-key="home">Home</a></li>
+                    <li><a href="#cars" class="nav-link" data-key="cars">Cars</a></li>
+                    <li><a href="#about" class="nav-link" data-key="about">About</a></li>
+                    <li><a href="#contact" class="nav-link" data-key="contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="language-selector">
+                    <select id="language-select">
+                        <option value="en">English</option>
+                        <option value="ru">Русский</option>
+                        <option value="uz">O'zbek</option>
+                        <option value="ar">العربية</option>
+                    </select>
+                </div>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                    <div class="cart-dropdown">
+                        <div class="cart-items">
+                            <!-- Cart items will be added here dynamically -->
+                            <div class="empty-cart-message" data-key="emptyCart">Your cart is empty</div>
+                        </div>
+                        <div class="cart-total">
+                            <span data-key="total">Total:</span>
+                            <span class="total-amount">$0</span>
+                        </div>
+                        <div class="cart-actions">
+                            <a href="#" class="btn btn-primary view-cart-btn" data-key="viewCart">View Cart</a>
+                            <a href="#" class="btn btn-secondary checkout-btn" data-key="checkout">Checkout</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-key="heroTitle">Find Your Perfect Car</h1>
+                <p class="hero-subtitle" data-key="heroSubtitle">Discover the best deals on premium vehicles</p>
+                <a href="#cars" class="btn btn-primary btn-gradient" data-key="exploreBtn">Explore Cars</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="cars" class="cars-section">
+        <div class="animated-bg">
+            <div class="animated-bg-shape"></div>
+            <div class="animated-bg-shape"></div>
+            <div class="animated-bg-shape"></div>
+        </div>
+        <div class="container">
+            <h2 class="section-title reveal fade-bottom" data-key="featuredCars">Featured Cars</h2>
+            <div class="filter-options">
+                <select id="brand-filter">
+                    <option value="all" data-key="allBrands">All Brands</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="bmw">BMW</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+                <select id="price-filter">
+                    <option value="all" data-key="allPrices">All Prices</option>
+                    <option value="low" data-key="lowPrice">$0 - $20,000</option>
+                    <option value="medium" data-key="mediumPrice">$20,000 - $50,000</option>
+                    <option value="high" data-key="highPrice">$50,000+</option>
+                </select>
+            </div>
+            <div class="cars-grid">
+                <div class="car-card" data-brand="toyota" data-price="medium" data-id="1">
+                    <div class="ribbon">New</div>
+                    <div class="car-badge">Featured</div>
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Toyota Camry">
+                    </div>
+                    <div class="car-details">
+                        <h3>Toyota Camry</h3>
+                        <p class="car-price">$25,000</p>
+                        <div class="car-specs">
+                            <span><i class="fas fa-calendar"></i> 2023</span>
+                            <span><i class="fas fa-tachometer-alt"></i> 15,000 km</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                        </div>
+                        <button class="btn btn-secondary add-to-cart-btn" data-key="addToCart" data-id="1" data-name="Toyota Camry" data-price="25000" data-image="https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="car-card" data-brand="bmw" data-price="high" data-id="2">
+                    <div class="car-badge">Premium</div>
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="BMW X5">
+                    </div>
+                    <div class="car-details">
+                        <h3>BMW X5</h3>
+                        <p class="car-price">$65,000</p>
+                        <div class="car-specs">
+                            <span><i class="fas fa-calendar"></i> 2023</span>
+                            <span><i class="fas fa-tachometer-alt"></i> 5,000 km</span>
+                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                        </div>
+                        <button class="btn btn-secondary add-to-cart-btn" data-key="addToCart" data-id="2" data-name="BMW X5" data-price="65000" data-image="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="car-card" data-brand="mercedes" data-price="high" data-id="3">
+                    <div class="car-badge">Luxury</div>
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mercedes E-Class">
+                    </div>
+                    <div class="car-details">
+                        <h3>Mercedes E-Class</h3>
+                        <p class="car-price">$58,000</p>
+                        <div class="car-specs">
+                            <span><i class="fas fa-calendar"></i> 2022</span>
+                            <span><i class="fas fa-tachometer-alt"></i> 12,000 km</span>
+                            <span><i class="fas fa-gas-pump"></i> Hybrid</span>
+                        </div>
+                        <button class="btn btn-secondary add-to-cart-btn" data-key="addToCart" data-id="3" data-name="Mercedes E-Class" data-price="58000" data-image="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="car-card" data-brand="audi" data-price="high" data-id="4">
+                    <div class="ribbon">Sale</div>
+                    <div class="car-badge">Premium</div>
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Audi Q7">
+                    </div>
+                    <div class="car-details">
+                        <h3>Audi Q7</h3>
+                        <p class="car-price">$62,000</p>
+                        <div class="car-specs">
+                            <span><i class="fas fa-calendar"></i> 2023</span>
+                            <span><i class="fas fa-tachometer-alt"></i> 8,000 km</span>
+                            <span><i class="fas fa-gas-pump"></i> Diesel</span>
+                        </div>
+                        <button class="btn btn-secondary add-to-cart-btn" data-key="addToCart" data-id="4" data-name="Audi Q7" data-price="62000" data-image="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="car-card" data-brand="toyota" data-price="low" data-id="5">
+                    <div class="car-badge">Economy</div>
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Toyota Corolla">
+                    </div>
+                    <div class="car-details">
+                        <h3>Toyota Corolla</h3>
+                        <p class="car-price">$18,000</p>
+                        <div class="car-specs">
+                            <span><i class="fas fa-calendar"></i> 2021</span>
+                            <span><i class="fas fa-tachometer-alt"></i> 25,000 km</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                        </div>
+                        <button class="btn btn-secondary add-to-cart-btn" data-key="addToCart" data-id="5" data-name="Toyota Corolla" data-price="18000" data-image="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="car-card" data-brand="audi" data-price="medium" data-id="6">
+                    <div class="ribbon">Hot</div>
+                    <div class="car-badge">Sport</div>
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Audi A4">
+                    </div>
+                    <div class="car-details">
+                        <h3>Audi A4</h3>
+                        <p class="car-price">$35,000</p>
+                        <div class="car-specs">
+                            <span><i class="fas fa-calendar"></i> 2022</span>
+                            <span><i class="fas fa-tachometer-alt"></i> 18,000 km</span>
+                            <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                        </div>
+                        <button class="btn btn-secondary add-to-cart-btn" data-key="addToCart" data-id="6" data-name="Audi A4" data-price="35000" data-image="https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="load-more">
+                <button class="btn btn-outline" data-key="loadMore">Load More</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title reveal fade-bottom" data-key="aboutUs">About Us</h2>
+            <div class="about-content">
+                <div class="about-text reveal fade-right">
+                    <p data-key="aboutText1">AutoMarket is a premier car dealership with over 15 years of experience in the automotive industry. We pride ourselves on offering high-quality vehicles at competitive prices.</p>
+                    <p data-key="aboutText2">Our team of experts is dedicated to providing exceptional customer service and helping you find the perfect car that meets your needs and budget.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <h3 class="counter-animation" data-count="500">0</h3>
+                            <p data-key="carsSold">Cars Sold</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="counter-animation" data-count="15">0</h3>
+                            <p data-key="yearsExperience">Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="counter-animation" data-count="100">0</h3>
+                            <p data-key="satisfaction">Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image reveal fade-left">
+                    <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Car Dealership">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title reveal fade-bottom" data-key="contactUs">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-form reveal fade-right">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name" data-key="nameLabel">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-key="emailLabel">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" data-key="phoneLabel">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-key="messageLabel">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-gradient" data-key="sendMessage">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info reveal fade-left">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p data-key="address">123 Car Street, Automotive City, AC 12345</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 (123) 456-7890</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@automarket.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <p data-key="workingHours">Mon-Sat: 9:00 AM - 6:00 PM</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="tooltip"><i class="fab fa-facebook"></i><span class="tooltip-text">Facebook</span></a>
+                        <a href="#" class="tooltip"><i class="fab fa-instagram"></i><span class="tooltip-text">Instagram</span></a>
+                        <a href="#" class="tooltip"><i class="fab fa-twitter"></i><span class="tooltip-text">Twitter</span></a>
+                        <a href="#" class="tooltip"><i class="fab fa-youtube"></i><span class="tooltip-text">YouTube</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>AutoMarket</h2>
+                    <p data-key="footerTagline">Your trusted partner in finding the perfect car</p>
+                </div>
+                <div class="footer-links">
+                    <h3 data-key="quickLinks">Quick Links</h3>
+                    <ul>
+                        <li><a href="#" data-key="home">Home</a></li>
+                        <li><a href="#cars" data-key="cars">Cars</a></li>
+                        <li><a href="#about" data-key="about">About</a></li>
+                        <li><a href="#contact" data-key="contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3 data-key="newsletter">Newsletter</h3>
+                    <p data-key="newsletterText">Subscribe to our newsletter for the latest updates and offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" class="btn btn-primary btn-gradient" data-key="subscribe">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-key="copyright">© 2023 AutoMarket. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Page Modal -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-key="yourCart">Your Cart</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="cart-items-container">
+                    <!-- Cart items will be added here dynamically -->
+                </div>
+                <div class="cart-summary">
+                    <div class="cart-total-large">
+                        <span data-key="total">Total:</span>
+                        <span class="total-amount-large">$0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline continue-shopping" data-key="continueShopping">Continue Shopping</button>
+                <button class="btn btn-primary btn-gradient proceed-to-checkout" data-key="proceedToCheckout">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-key="checkout">Checkout</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="checkout-form">
+                    <div class="checkout-sections">
+                        <div class="checkout-section">
+                            <h3 data-key="personalInfo">Personal Information</h3>
+                            <div class="form-group">
+                                <label for="checkout-name" data-key="nameLabel">Full Name</label>
+                                <input type="text" id="checkout-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkout-email" data-key="emailLabel">Email</label>
+                                <input type="email" id="checkout-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkout-phone" data-key="phoneLabel">Phone</label>
+                                <input type="tel" id="checkout-phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkout-address" data-key="addressLabel">Address</label>
+                                <input type="text" id="checkout-address" name="address" required>
+                            </div>
+                        </div>
+                        <div class="checkout-section">
+                            <h3 data-key="paymentInfo">Payment Information</h3>
+                            <div class="form-group">
+                                <label for="card-name" data-key="cardNameLabel">Name on Card</label>
+                                <input type="text" id="card-name" name="cardName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="card-number" data-key="cardNumberLabel">Card Number</label>
+                                <input type="text" id="card-number" name="cardNumber" placeholder="XXXX XXXX XXXX XXXX" required>
+                            </div>
+                            <div class="card-details">
+                                <div class="form-group">
+                                    <label for="card-expiry" data-key="expiryDateLabel">Expiry Date</label>
+                                    <input type="text" id="card-expiry" name="cardExpiry" placeholder="MM/YY" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-cvv" data-key="cvvLabel">CVV</label>
+                                    <input type="text" id="card-cvv" name="cardCvv" placeholder="XXX" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-summary">
+                        <h3 data-key="orderSummary">Order Summary</h3>
+                        <div class="order-items">
+                            <!-- Order items will be added here dynamically -->
+                        </div>
+                        <div class="order-total">
+                            <span data-key="total">Total:</span>
+                            <span class="checkout-total-amount">$0</span>
+                        </div>
+                    </div>
+                    <div class="checkout-actions">
+                        <button type="button" class="btn btn-outline back-to-cart" data-key="backToCart">Back to Cart</button>
+                        <button type="submit" class="btn btn-primary btn-gradient place-order" data-key="placeOrder">Place Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div class="modal" id="confirmation-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 data-key="orderConfirmation">Order Confirmation</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="confirmation-message">
+                    <i class="fas fa-check-circle"></i>
+                    <h3 data-key="thankYou">Thank you for your order!</h3>
+                    <p data-key="orderConfirmationMessage">Your order has been placed successfully. You will receive a confirmation email shortly.</p>
+                    <div class="order-details">
+                        <h4 data-key="orderDetails">Order Details</h4>
+                        <p><strong data-key="orderNumber">Order Number:</strong> <span id="order-number"></span></p>
+                        <p><strong data-key="orderDate">Order Date:</strong> <span id="order-date"></span></p>
+                        <p><strong data-key="orderTotal">Order Total:</strong> <span id="order-total"></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-gradient continue-shopping-final" data-key="continueShopping">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+    
+    <!-- Floating Action Button -->
+    <div class="floating-action-btn tooltip">
+        <i class="fas fa-headset"></i>
+        <span class="tooltip-text">Need Help?</span>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="animations.js"></script>
+</body>
+</html>
